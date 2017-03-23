@@ -12,4 +12,12 @@ public class Panel extends JPanel{
         setPreferredSize(new Dimension(800, 800));
         setBackground(Color.WHITE);
     }
+    @Override
+    protected void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        Graphics2D g2d = (Graphics2D) g;
+
+        // kolo
+        g2d.fillOval(10, 10, 30, 30);
+    }
 }

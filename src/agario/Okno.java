@@ -15,5 +15,7 @@ public class Okno extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
+        add(new Myszka());
+        //setVisible(true);
     }
 }
