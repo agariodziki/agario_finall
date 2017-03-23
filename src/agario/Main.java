@@ -1,9 +1,15 @@
 package agario;
 
+import java.awt.EventQueue;
+
 public class Main {
 
     public static void main(String[] args) {
-        // Prints "Hello, World" to the terminal window.
-        System.out.println("GUCIO KURWA");
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new okno();
+            }
+        });
     }
 }
