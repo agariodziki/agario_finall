@@ -48,7 +48,6 @@ public class Gracz {
         this.id_gracza = id_gracza;
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
