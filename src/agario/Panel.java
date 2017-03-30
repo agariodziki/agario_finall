@@ -36,8 +36,8 @@ public class Panel extends JPanel implements MouseMotionListener{
     }
     public void mouseMoved(MouseEvent e) {
         System.out.println("ruch");
-        gracz.setWspol_x(gracz.getWspol_x());
-        gracz.setWspol_y(gracz.getWspol_y());
+        gracz.setWspol_x(e.getX());
+        gracz.setWspol_y(e.getY());
         repaint();
 
     }
