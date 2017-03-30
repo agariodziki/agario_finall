@@ -5,10 +5,12 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import static java.lang.StrictMath.abs;
+
 /**
  * Created by Karoll0 on 2017-03-23.
  */
-public class Gracz implements MouseListener, MouseMotionListener {
+public class Gracz  {
     private int wspol_x;
     private int wspol_y;
     private int promien;
@@ -51,12 +53,40 @@ public class Gracz implements MouseListener, MouseMotionListener {
     public void setWspol_x(int wspol_x) {
         if((this.wspol_x+wspol_x)/2>0)
         {
-            this.wspol_x =(this.wspol_x+wspol_x)/2;
+            int a =this.wspol_x-wspol_x;
+            int b =this.wspol_y-wspol_y;
+            if(abs(a)>15|| abs(b)>15)
+            {
+                this.wspol_x = this.wspol_x+(this.wspol_x+wspol_x)/10;
+                this.wspol_y = this.wspol_y+(this.wspol_y+wspol_y)/10;
+            }
+            else{
+                this.wspol_x = this.wspol_x+(this.wspol_x+wspol_x)/10;
+                this.wspol_y = this.wspol_y+(this.wspol_y+wspol_y)/10;
+            }
+
         }
         System.out.println(this.wspol_x);
         System.out.println(wspol_x);
     }
-
+    public void setWspol_x_y(int wspol_x,int wspol_y) {
+        if((this.wspol_x+wspol_x)/2>0)
+        {
+            int a =this.wspol_x-wspol_x;
+            int b =this.wspol_y-wspol_y;
+            if(abs(a)>15|| abs(b)>15)
+            {
+                this.wspol_x =(this.wspol_x+wspol_x)/5;
+                this.wspol_y = (this.wspol_y+wspol_y)/5;
+            }
+            else{
+                this.wspol_x =(this.wspol_x+wspol_x)/5;
+                this.wspol_y = (this.wspol_y+wspol_y)/5;
+            }
+        }
+        System.out.println(this.wspol_x);
+        System.out.println(wspol_x);
+    }
     public int getId_gracza() {
         return id_gracza;
     }
@@ -69,42 +99,4 @@ public class Gracz implements MouseListener, MouseMotionListener {
         this.name = name;
     }
 
-    @Override
-    public void mouseClicked(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        System.out.println("ruszam graczem");
-    }
-    public void paint()
-    {
-        g.drawOval(0,0,20,20);
-    }
 }

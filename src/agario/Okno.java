@@ -17,8 +17,6 @@ public class Okno extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
-
         //setVisible(true);
     }
 }
-
