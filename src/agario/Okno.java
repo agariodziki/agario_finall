@@ -2,6 +2,7 @@ package agario;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseListener;
 
 /**
  * Created by goodstuff on 23.03.2017.
@@ -16,7 +17,8 @@ public class Okno extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         setResizable(false);
-        add(new Myszka());
+
         //setVisible(true);
     }
 }
+
